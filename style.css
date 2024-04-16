@@ -150,7 +150,7 @@
 
 .category-card {
     width: 45%;
-    max-width: 80%;
+    max-width: 100%;
     height: max-content;
     /* تنظیم عرض هر کارت */
     margin: 10px;
