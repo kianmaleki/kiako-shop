@@ -85,7 +85,7 @@
 }
 
 .form .section-form {
-    width: 25rem;
+    width: 45%;
     max-width: 100%;
     padding: 1rem;
     padding-top: 3rem;
@@ -152,9 +152,7 @@
     width: 45%;
     max-width: 100%;
     height: max-content;
-    /* تنظیم عرض هر کارت */
     margin: 10px;
-    /* فاصله بین کارت ها */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.13);
     text-align: center;
     background-color: #2f2b3a;
