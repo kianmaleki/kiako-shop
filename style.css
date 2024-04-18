@@ -195,6 +195,15 @@
   width: 30%;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 2rem auto;
+}
+
 @media only screen and (max-width: 700px) {
   .hide {
     display: none;
