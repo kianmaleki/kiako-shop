@@ -97,7 +97,7 @@
 }
 
 .form .section-form {
-  width: 35%;
+  width: 30rem;
   max-width: 100%;
   padding: 1rem;
   padding-top: 3rem;
@@ -260,6 +260,6 @@
   }
 
   .form .section-form {
-    width: 85%;
+    width: 90%;
   }
 }
