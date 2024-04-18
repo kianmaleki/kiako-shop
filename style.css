@@ -13,6 +13,7 @@
 .body {
   font-family: "danstevis";
   background-color: #1a1625;
+  scroll-behavior: smooth;
 }
 
 .nav {
