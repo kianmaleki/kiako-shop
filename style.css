@@ -51,6 +51,7 @@
 
 .nav ul li a:hover {
   border-bottom: 2px solid #76737e;
+  opacity: 0.7;
 }
 
 .nav ul li .here-page {
