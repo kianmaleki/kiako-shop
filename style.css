@@ -269,6 +269,12 @@
   height: 240px;
   object-fit: cover;
   border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.category-card img:hover {
+  opacity: 0.5;
+  transform: scale(1.01);
 }
 
 .category-card h3 {
