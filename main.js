@@ -15,3 +15,7 @@ window.onclick = function (event) {
     }
   }
 };
+
+document.querySelector(".buy-button").addEventListener("click", function () {
+  alert("Product added to cart!");
+});
