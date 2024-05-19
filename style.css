@@ -296,6 +296,10 @@
   margin: 2rem auto;
 }
 
+.header {
+  margin: 1.5 rem;
+}
+
 @media only screen and (max-width: 700px) {
   .hide {
     display: none;
