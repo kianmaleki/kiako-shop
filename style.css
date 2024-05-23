@@ -282,6 +282,13 @@
   padding: 0.25rem;
 }
 
+.category-card p {
+  color: green;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 20px;
+}
+
 .mahsol {
   width: 30%;
 }

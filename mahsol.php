@@ -1,3 +1,14 @@
+<?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$dbname = 'kiako';
+$id = $_GET['id'];
+$connect = mysqli_connect($server, $user, $pass, $dbname);
+$sql = 'select * from mahsolat where id=' . $id;
+$result = mysqli_query($connect, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -5,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>mahsol</title>
     <style>
         .product-container {
             max-width: 100%;
@@ -36,8 +47,7 @@
             max-width: 100%;
             height: 60vh;
             object-fit: contain;
-            border-radius: 25px;
-            transition: all 0.5s;
+            border-radius: 20px;
         }
 
         .product-info .product-info-text h1 {
@@ -73,55 +83,118 @@
             text-decoration: line-through;
             padding: 0.5rem;
             margin: 0.5rem;
-
+            font-size: 1.25rem;
         }
 
         .product-info-price .off-price {
             color: green;
             padding: 0.5rem;
             margin: 0.5rem;
+            font-size: 1.25rem;
+
         }
 
         .buy-button button {
             background-color: #76737e;
             padding: 1rem 1.25rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1.5rem;
             font-weight: 400;
-            width: 60%;
+            width: 50%;
             margin: auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
+        .buy-button button:hover {
+            opacity: 0.75;
+        }
     </style>
 </head>
 
 <body class="body">
-    <div class="product-container">
+    <nav class="nav">
+        <div id="nav" class="nav-section hide">
+            <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="about-me.html">درباره من</a></li>
+                <li><a href="call-me.html">ارتباط با من</a></li>
+                <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
+                <li><a href="login.html">ثبت نام</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <img src="images/png/withe.png" alt="kiako-logo" class="logo" />
+        </div>
+    </nav>
+
+    <div class="nav-section dropdown">
+        <button onclick="toggleDropdown()" class="dropbtn">&#9776;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <ul>
+                <li class="mini-menu">منو</li>
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="about-me.html">درباره من</a></li>
+                <li><a href="call-me.html">ارتباط با من</a></li>
+                <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
+                <li><a href="login.html">ثبت نام</a></li>
+            </ul>
+        </div>
+    </div>
+    <?php
+    while ($row = mysqli_fetch_assoc($result)) {
+        if ($row['off'] == '') {
+            echo '    
+        <div class="product-container">
         <div class="product-image">
             <img src="./images/sib.webp" alt="Product Image">
         </div>
         <div class="product-info">
             <div class="product-info-text">
-                <h1>نام محصول</h1>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها
-                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
-                    آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
-                    ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که
-                    تمام </p>
+                <h1>' . $row['name'] . '</h1>
+                <p>' . $row['tozih'] . '</p>
             </div>
             <div class="product-info-price">
-                <p class="price">$99.99</p>
-                <p class="off-price">$74.99</p>
+                <p class="price">' . $row['price'] . '</p>
             </div>
             <div class="buy-button">
                 <button>خرید</button>
             </div>
         </div>
     </div>
+    ';
+        } else {
+            $price = $row['price'];
+            $off = $row['off'];
+            $off_price = $price - (($price * $off) / 100);
+            echo '    
+        <div class="product-container">
+        <div class="product-image">
+            <img src="./images/sib.webp" alt="Product Image">
+        </div>
+        <div class="product-info">
+            <div class="product-info-text">
+                <h1>' . $row['name'] . '</h1>
+                <p>' . $row['tozih'] . '</p>
+            </div>
+            <div class="product-info-price">
+                <p class="price">' . $row['price'] . '</p>
+                <p class="off-price">' . $off_price . '</p>
+            </div>
+            <div class="buy-button">
+                <button>خرید</button>
+            </div>
+        </div>
+    </div>
+    ';
+        }
+        ;
+    }
+    ;
+    ?>
 </body>
 
 </html>
