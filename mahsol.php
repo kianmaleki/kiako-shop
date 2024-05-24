@@ -15,20 +15,19 @@ $result = mysqli_query($connect, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>mahsol</title>
     <style>
         .product-container {
             max-width: 100%;
             width: 90%;
             height: 90vh;
-            max-height: max-content;
+            min-height: max-content;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            s flex-wrap: wrap;
-            padding: 2rem;
-            margin: 2rem auto;
+            flex-wrap: wrap;
+            margin: auto;
         }
 
         .product-image,
@@ -39,15 +38,15 @@ $result = mysqli_query($connect, $sql);
             text-align: right;
             border-radius: 10px;
             background: none;
-            height: 70vh;
+            height: 80vh;
         }
 
         .product-image img {
             width: 100%;
             max-width: 100%;
-            height: 60vh;
-            object-fit: contain;
-            border-radius: 20px;
+            height: 50vh;
+            object-fit: cover;
+            border-radius: 50px;
         }
 
         .product-info .product-info-text h1 {
@@ -79,36 +78,37 @@ $result = mysqli_query($connect, $sql);
         }
 
         .product-info-price .price {
+            color: green;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .product-info-price .off-price {
             color: red;
             text-decoration: line-through;
             padding: 0.5rem;
             margin: 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        .product-info-price .off-price {
-            color: green;
-            padding: 0.5rem;
-            margin: 0.5rem;
-            font-size: 1.25rem;
-
+            font-size: 1.5rem;
         }
 
         .buy-button button {
             background-color: #76737e;
-            padding: 1rem 1.25rem;
+            padding: 0.75rem 1.2rem;
             border: none;
             border-radius: 10px;
             font-size: 1.5rem;
             font-weight: 400;
-            width: 50%;
+            width: 40%;
             margin: auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
         }
 
         .buy-button button:hover {
+            transform: scale(1.001);
             opacity: 0.75;
         }
     </style>
@@ -118,7 +118,7 @@ $result = mysqli_query($connect, $sql);
     <nav class="nav">
         <div id="nav" class="nav-section hide">
             <ul>
-                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="index.php">صفحه اصلی</a></li>
                 <li><a href="about-me.html">درباره من</a></li>
                 <li><a href="call-me.html">ارتباط با من</a></li>
                 <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
@@ -136,7 +136,7 @@ $result = mysqli_query($connect, $sql);
         <div id="myDropdown" class="dropdown-content">
             <ul>
                 <li class="mini-menu">منو</li>
-                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="index.php">صفحه اصلی</a></li>
                 <li><a href="about-me.html">درباره من</a></li>
                 <li><a href="call-me.html">ارتباط با من</a></li>
                 <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
@@ -146,11 +146,11 @@ $result = mysqli_query($connect, $sql);
     </div>
     <?php
     while ($row = mysqli_fetch_assoc($result)) {
-        if ($row['off'] == '') {
+        if (empty($row['off'])) {
             echo '    
         <div class="product-container">
         <div class="product-image">
-            <img src="./images/sib.webp" alt="Product Image">
+            <img src="images/' . $row['pic'] . '" alt="Product Image">
         </div>
         <div class="product-info">
             <div class="product-info-text">
@@ -173,7 +173,7 @@ $result = mysqli_query($connect, $sql);
             echo '    
         <div class="product-container">
         <div class="product-image">
-            <img src="./images/sib.webp" alt="Product Image">
+            <img src="images/' . $row['pic'] . '" alt="Product Image">
         </div>
         <div class="product-info">
             <div class="product-info-text">
