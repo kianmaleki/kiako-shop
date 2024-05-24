@@ -346,6 +346,7 @@
     z-index: 1;
     border-radius: 2rem;
     font-weight: 400;
+    height: 100vh;
   }
 
   .dropdown-content a {

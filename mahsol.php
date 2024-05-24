@@ -130,12 +130,16 @@ $result = mysqli_query($connect, $sql);
                 height: auto;
                 justify-content: center;
             }
+
+            .product-info .product-info-text p {
+                font-size: 0.90rem;
+            }
         }
     </style>
 </head>
 
 <body class="body">
-    <nav class="nav">
+    <nav class="nav hide">
         <div id="nav" class="nav-section hide">
             <ul>
                 <li><a href="index.php">صفحه اصلی</a></li>

@@ -24,7 +24,7 @@ $result = mysqli_query($connect, $sql);
 </head>
 
 <body class="body">
-  <nav class="nav">
+  <nav class="nav hide">
     <div class="nav-section hide">
       <ul>
         <li><a href="index.php" class="here-page">صفحه اصلی</a></li>
