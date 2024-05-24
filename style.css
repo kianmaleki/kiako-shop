@@ -330,7 +330,8 @@
     font-weight: 600;
     border: none;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
+    text-align: center;
     cursor: pointer;
     display: block;
   }

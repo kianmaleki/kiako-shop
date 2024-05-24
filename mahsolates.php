@@ -52,9 +52,8 @@
             $user = 'root';
             $pass = '';
             $dbname = 'kiako';
-            $id = $_GET['id'];
             $connect = mysqli_connect($server, $user, $pass, $dbname);
-            $sql = 'select * from mahsolat where category_id=' . $id;
+            $sql = 'select * from mahsolat ';
             $result = mysqli_query($connect, $sql);
             //select
             if (mysqli_num_rows($result) > 0) {

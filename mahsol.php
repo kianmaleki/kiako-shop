@@ -44,7 +44,7 @@ $result = mysqli_query($connect, $sql);
         .product-image img {
             width: 100%;
             max-width: 100%;
-            height: 50vh;
+            height: 60vh;
             object-fit: cover;
             border-radius: 50px;
         }
@@ -111,6 +111,26 @@ $result = mysqli_query($connect, $sql);
             transform: scale(1.001);
             opacity: 0.75;
         }
+
+        @media only screen and (max-width: 1200px) {
+
+            .product-image,
+            .product-info {
+                width: 100%;
+                max-width: 100%;
+                height: max-content;
+            }
+
+            .product-image img {
+                height: 40vh;
+            }
+
+            .product-container {
+                align-items: start;
+                height: auto;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -121,7 +141,7 @@ $result = mysqli_query($connect, $sql);
                 <li><a href="index.php">صفحه اصلی</a></li>
                 <li><a href="about-me.html">درباره من</a></li>
                 <li><a href="call-me.html">ارتباط با من</a></li>
-                <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
+                <li><a href="mahsolates.php" class="here-page">فروشگاه</a></li>
                 <li><a href="login.html">ثبت نام</a></li>
             </ul>
         </div>
@@ -139,7 +159,7 @@ $result = mysqli_query($connect, $sql);
                 <li><a href="index.php">صفحه اصلی</a></li>
                 <li><a href="about-me.html">درباره من</a></li>
                 <li><a href="call-me.html">ارتباط با من</a></li>
-                <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
+                <li><a href="mahsolates.php" class="here-page">فروشگاه</a></li>
                 <li><a href="login.html">ثبت نام</a></li>
             </ul>
         </div>
@@ -181,8 +201,8 @@ $result = mysqli_query($connect, $sql);
                 <p>' . $row['tozih'] . '</p>
             </div>
             <div class="product-info-price">
-                <p class="price">' . $row['price'] . '</p>
-                <p class="off-price">' . $off_price . '</p>
+                <p class="off-price">' . $row['price'] . '</p>
+                <p class="price">' . $off_price . '</p>
             </div>
             <div class="buy-button">
                 <button>خرید</button>
@@ -195,6 +215,7 @@ $result = mysqli_query($connect, $sql);
     }
     ;
     ?>
+    <script src="main.js"></script>
 </body>
 
 </html>

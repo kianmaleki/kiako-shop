@@ -30,7 +30,7 @@ $result = mysqli_query($connect, $sql);
         <li><a href="index.php" class="here-page">صفحه اصلی</a></li>
         <li><a href="about-me.html">درباره من</a></li>
         <li><a href="call-me.html">ارتباط با من</a></li>
-        <li><a href="mahsolat.php">فروشگاه</a></li>
+        <li><a href="mahsolates.php">فروشگاه</a></li>
         <li><a href="login.html">ثبت نام</a></li>
       </ul>
     </div>
@@ -47,7 +47,7 @@ $result = mysqli_query($connect, $sql);
         <li><a href="index.php">صفحه اصلی</a></li>
         <li><a href="about-me.html">درباره من</a></li>
         <li><a href="call-me.html">ارتباط با من</a></li>
-        <li><a href="mahsolat.php" class="here-page">فروشگاه</a></li>
+        <li><a href="mahsolates.php" class="here-page">فروشگاه</a></li>
         <li><a href="login.html">ثبت نام</a></li>
       </ul>
     </div>
