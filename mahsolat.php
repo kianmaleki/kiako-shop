@@ -14,7 +14,7 @@
 </head>
 
 <body class="body">
-    <nav class="nav hide">
+    <nav class="nav hides">
         <div id="nav" class="nav-section hide">
             <ul>
                 <li><a href="index.php">صفحه اصلی</a></li>
