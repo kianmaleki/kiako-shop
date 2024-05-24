@@ -58,29 +58,29 @@
             //select
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    if ($row['off'] == '') {
+                    if (empty($row['off'])) {
                         echo '
-                <div class="category-card mahsol">
-                    <a href="/class-shop/mahsol.php?id=' . $row['id'] . '" id="khoraki">
-                        <img src="images/sib.webp" alt="نام دسته بندی 1" />
-                        <h3>نام محصول : ' . $row['name'] . '</h3>
-                        <p>قیمت : ' . $row['price'] . '</p>
-                    </a>
-                </div>
+                            <div class="category-card mahsol">
+                                <a href="/class-shop/mahsol.php?id=' . $row['id'] . '" id="khoraki">
+                                    <img src="images/sib.webp" alt="نام دسته بندی 1" />
+                                    <h3>نام محصول : ' . $row['name'] . '</h3>
+                                    <p>قیمت : <span class="price">' . $row['price'] . '</span></p>
+                                </a>
+                            </div>
             ';
                     } else {
                         $price = $row['price'];
                         $off = $row['off'];
                         $off_price = $price - (($price * $off) / 100);
                         echo '
-                <div class="category-card mahsol">
-                    <a href="/class-shop/mahsol.php?id=' . $row['id'] . '" id="khoraki">
-                        <img src="images/sib.webp" alt="نام دسته بندی 1" />
-                        <h3>نام محصول : ' . $row['name'] . '</h3>
-                        <p>قیمت : <span class="price">' . $off_price . '</span><span class = "off-price" >' . $row['price'] . '</span></p>
-                    </a>
-                </div>
-            ';
+                            <div class="category-card mahsol">
+                                <a href="/class-shop/mahsol.php?id=' . $row['id'] . '" id="khoraki">
+                                    <img src="images/sib.webp" alt="نام دسته بندی 1" />
+                                    <h3>نام محصول : ' . $row['name'] . '</h3>
+                                    <p>قیمت : <span class="off-price">' . $off_price . '</span><span class="price" >' . $row['price'] . '</span></p>
+                                </a>
+                            </div>
+                        ';
                     }
 
                 }
