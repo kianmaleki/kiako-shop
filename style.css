@@ -282,11 +282,18 @@
   padding: 0.25rem;
 }
 
-.category-card p {
+.category-card .price {
   color: green;
   padding: 0.5rem;
   margin: 0.5rem;
   font-size: 20px;
+}
+
+.category-card .off-price {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: red;
+  text-decoration: line-through;
 }
 
 .mahsol {

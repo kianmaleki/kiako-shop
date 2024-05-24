@@ -77,7 +77,7 @@
                     <a href="/class-shop/mahsol.php?id=' . $row['id'] . '" id="khoraki">
                         <img src="images/sib.webp" alt="نام دسته بندی 1" />
                         <h3>نام محصول : ' . $row['name'] . '</h3>
-                        <p>قیمت : ' . $off_price . '<span style="padding: 0.5rem;margin: 0.5rem;color: red;text-decoration: line-through;">' . $row['price'] . '</span></p>
+                        <p>قیمت : <span class="price">' . $off_price . '</span><span class = "off-price" >' . $row['price'] . '</span></p>
                     </a>
                 </div>
             ';
