@@ -43,7 +43,6 @@
 .nav ul li a {
   text-decoration: none;
   color: #fff;
-  /* padding: 0.25rem; */
   margin: 0.5rem;
   font-weight: 600;
   font-size: calc(0.5rem + 0.5vw);
@@ -283,6 +282,20 @@
   padding: 0.25rem;
 }
 
+.category-card .price {
+  color: green;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 20px;
+}
+
+.category-card .off-price {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: red;
+  text-decoration: line-through;
+}
+
 .mahsol {
   width: 30%;
 }
@@ -317,7 +330,8 @@
     font-weight: 600;
     border: none;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
+    text-align: center;
     cursor: pointer;
     display: block;
   }
@@ -332,6 +346,7 @@
     z-index: 1;
     border-radius: 2rem;
     font-weight: 400;
+    height: 100vh;
   }
 
   .dropdown-content a {
