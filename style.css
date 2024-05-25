@@ -102,6 +102,7 @@
   width: 45%;
   object-fit: contain;
   aspect-ratio: 3/2;
+  color: #fff;
 }
 
 .slide-in-top {
