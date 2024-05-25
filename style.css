@@ -342,6 +342,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
+    z-index: 999;
     background-color: #76737e;
     min-width: 100%;
     text-align: center;
@@ -349,7 +350,7 @@
     z-index: 1;
     border-radius: 2rem;
     font-weight: 400;
-    height: 100vh;
+    height: calc(100vh + 100%);
   }
 
   .dropdown-content a {
