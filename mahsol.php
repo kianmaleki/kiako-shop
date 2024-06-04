@@ -78,14 +78,14 @@ $result = mysqli_query($connect, $sql);
         }
 
         .product-info-price .price {
-            color: rgb(0, 255, 0);
+            color: red;
             padding: 0.5rem;
             margin: 0.5rem;
             font-size: 1.5rem;
         }
 
         .product-info-price .off-price {
-            color: rgb(255, 0, 0);
+            color: green;
             text-decoration: line-through;
             padding: 0.5rem;
             margin: 0.5rem;
