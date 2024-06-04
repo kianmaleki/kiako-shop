@@ -1,5 +1,5 @@
 <?php
-$server = 'kiko.freehost.io';
+$server = 'localhost';
 $user = 'kikofr_kian';
 $pass = 'vJ8-wI7-dS4-bG6-';
 $dbname = 'kikofr_kiakp';
