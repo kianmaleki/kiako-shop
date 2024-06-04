@@ -4,13 +4,8 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$server = 'http://kiko.freehost.io/';
-$user = 'kikofr_kian';
-$pass = 'vJ8-wI7-dS4-bG6-';
-$dbname = 'kikofr_kiakp';
-
 // اتصال به دیتابیس
-$db = new PDO('mysql:host=http://kiko.freehost.io/;dbname=kikofr_kian', 'kikofr_kian', 'vJ8-wI7-dS4-bG6-');
+$db = new PDO('mysql:host=kiko.freehost.io;dbname=kikofr_kian', 'kikofr_kian', 'vJ8-wI7-dS4-bG6-');
 
 // ایجاد query برای INSERT
 $query = "INSERT INTO form ( username , password) VALUES (?, ?)";
