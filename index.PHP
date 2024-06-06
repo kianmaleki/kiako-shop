@@ -1,8 +1,8 @@
 <?php
 $server = 'localhost';
-$user = 'kikofr_kian';
-$pass = 'vJ8-wI7-dS4-bG6-';
-$dbname = 'kikofr_kiakp';
+$user = 'root';
+$pass = '';
+$dbname = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $dbname);
 $sql = 'select * from categories';
 $result = mysqli_query($connect, $sql);

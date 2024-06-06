@@ -5,7 +5,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // اتصال به دیتابیس
-$db = new PDO('mysql:host=kiko.freehost.io;dbname=kikofr_kian', 'kikofr_kian', 'vJ8-wI7-dS4-bG6-');
+$db = new PDO('mysql:host=localhost;dbname=kiako', 'root', '');
 
 // ایجاد query برای INSERT
 $query = "INSERT INTO form ( username , password) VALUES (?, ?)";

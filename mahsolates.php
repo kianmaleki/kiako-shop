@@ -48,10 +48,14 @@
         <h2>محصولات</h2>
         <div class="card-container">
             <?php
-            $server = 'kiko.freehost.io';
-            $user = 'kikofr_kian';
-            $pass = 'vJ8-wI7-dS4-bG6-';
-            $dbname = 'kikofr_kiakp';
+            // $server = 'kiko.freehost.io';
+            // $user = 'kikofr_kian';
+            // $pass = 'vJ8-wI7-dS4-bG6-';
+            // $dbname = 'kikofr_kiakp';
+            $server = 'localhost';
+            $user = 'root';
+            $pass = '';
+            $dbname = 'kiako';
             $connect = mysqli_connect($server, $user, $pass, $dbname);
             $sql = 'select * from mahsolat ';
             $result = mysqli_query($connect, $sql);
