@@ -35,6 +35,10 @@
   list-style-type: none;
 }
 
+.nav-section ul {
+  padding: 0;
+}
+
 .nav ul li {
   margin: 0.25rem;
   display: inline;
@@ -84,6 +88,7 @@
   margin: auto;
   max-width: 100%;
   height: max-content;
+  text-align: center;
 }
 
 .head-continer {
@@ -139,7 +144,7 @@
 }
 
 .head-continer p {
-  font-size: calc(1.5vw + 2rem);
+  font-size: calc(0.75vw + 1rem);
   margin: 2rem;
   font-weight: 300;
   max-width: 100%;
@@ -147,7 +152,7 @@
 }
 
 .head-continer .text {
-  font-size: calc(1.5rem + 0.75vw);
+  font-size: calc(1.25rem + 0.75vw);
 }
 
 .head-continer a {
@@ -189,7 +194,7 @@
   padding: 1rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border-radius: 100px 100px 50px 50px;
+  border-radius: 50px 50px 25px 25px;
   box-shadow: 0 0 3.5px 1px lightgray;
 }
 
@@ -200,7 +205,7 @@
   margin: 1.5rem auto;
   display: block;
   text-align: center;
-  border-radius: 100px 50px 100px 50px;
+  border-radius: 75px 25px 75px 25px;
   border: 1px solid #333333;
   color: #000;
 }
@@ -346,14 +351,16 @@
     background-color: #76737e;
     min-width: 100%;
     text-align: center;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     border-radius: 0.25rem;
     font-weight: 400;
-    height: 60vh;
+    height: calc(max-content + 20vh);
+    transition: all 0.5s;
   }
 
   .dropdown-content a {
     color: #fff;
+    text-align: center;
     padding: 1rem 1.25rem;
     text-decoration: none;
     display: block;
@@ -370,19 +377,26 @@
   }
 
   .form {
-    
-    margin: 1rem auto;
-  }
-
-  .form .section-form {
-    width: 100%;
+    margin: 0.25rem auto;
+    width: 90%;
     max-width: 100%;
   }
 
+  .mini-menu {
+    font-size: 1.7rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 2px 0px 0px rgba(255, 255, 255, 0.4);
+  }
+
+  .form .section-form input[type="submit"] {
+    width: 60%;
+  }
   .head-continer p {
     max-width: 100%;
     width: 90%;
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
 
   .head-continer img {
