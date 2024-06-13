@@ -17,5 +17,5 @@ window.onclick = function (event) {
 };
 
 document.querySelector(".buy-button").addEventListener("click", function () {
-  alert("Product added to cart!");
+  alert("محصول به سبد خرید اضافه شد !");
 });

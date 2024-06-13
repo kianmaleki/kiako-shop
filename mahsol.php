@@ -60,14 +60,14 @@ $result = mysqli_query($connect, $sql);
 
         .product-info .product-info-text p {
             margin-top: 10px;
-            padding: 1.5rem;
+            padding: 2rem;
             font-size: 1.25rem;
             border-top: 1px solid rgb(209, 211, 212, 0.3);
         }
 
         .product-info-price {
             margin-top: 10px;
-            padding: 1.5rem;
+            padding: 1rem;
             font-size: 1.25rem;
             border-top: 1px solid rgb(209, 211, 212, 0.3);
             margin: auto;
@@ -94,12 +94,12 @@ $result = mysqli_query($connect, $sql);
 
         .buy-button button {
             background-color: #76737e;
-            padding: 0.75rem 1.2rem;
+            padding: 0.75rem 1rem;
             border: none;
             border-radius: 10px;
             font-size: 1.5rem;
             font-weight: 400;
-            width: 40%;
+            width: 35%;
             margin: auto;
             display: flex;
             align-items: center;
