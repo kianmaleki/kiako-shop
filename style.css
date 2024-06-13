@@ -179,7 +179,8 @@
   text-align: center;
   width: 85%;
   max-width: 80%;
-  margin: 6rem auto;
+  margin: auto;
+  margin-top: 6rem;
 }
 
 .form .section-form {
@@ -342,16 +343,13 @@
 
   .dropdown-content {
     display: none;
-    position: absolute;
-    z-index: 999;
     background-color: #76737e;
     min-width: 100%;
     text-align: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 2rem;
+    border-radius: 0.25rem;
     font-weight: 400;
-    height: calc(100vh + 100%);
+    height: 60vh;
   }
 
   .dropdown-content a {
@@ -372,17 +370,19 @@
   }
 
   .form {
+    
     margin: 1rem auto;
   }
 
   .form .section-form {
-    width: 90%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .head-continer p {
     max-width: 100%;
     width: 90%;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .head-continer img {

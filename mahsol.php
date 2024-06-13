@@ -6,7 +6,7 @@ $dbname = 'kiako';
 $id = $_GET['id'];
 $connect = mysqli_connect($server, $user, $pass, $dbname);
 $sql = 'select * from mahsolat where id=' . $id;
-$result_1 = mysqli_query($connect, $sql);
+$result = mysqli_query($connect, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -78,14 +78,14 @@ $result_1 = mysqli_query($connect, $sql);
         }
 
         .product-info-price .price {
-            color: red;
+            color: green;
             padding: 0.5rem;
             margin: 0.5rem;
             font-size: 1.5rem;
         }
 
         .product-info-price .off-price {
-            color: green;
+            color: red;
             text-decoration: line-through;
             padding: 0.5rem;
             margin: 0.5rem;
