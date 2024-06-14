@@ -451,7 +451,8 @@
     font-size: calc(1vw + 2.5rem);
     font-weight: 600;
     border: none;
-    margin: 1rem;
+    margin: 0.75rem;
+    padding: 0.5rem;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
@@ -468,6 +469,7 @@
     font-weight: 400;
     height: calc(max-content + 20vh);
     transition: all 0.5s;
+    margin-bottom: 1rem;
   }
 
   .dropdown-content a {
@@ -513,6 +515,10 @@
   .head-continer img {
     max-width: 100%;
     width: 100%;
+  }
+
+  .head-continer {
+    margin-top: 1rem;
   }
 }
 
