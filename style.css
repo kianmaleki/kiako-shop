@@ -148,7 +148,7 @@
   margin: 2rem;
   font-weight: 300;
   max-width: 100%;
-  width:45%;
+  width: 45%;
 }
 
 .head-continer .text {
@@ -387,7 +387,7 @@
     font-weight: 700;
     border: none;
     border-radius: 0 0 15px 15px;
-    box-shadow: 0 2px 0px 0px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0.75px 0px 0px rgba(255, 255, 255, 0.4);
   }
 
   .form .section-form input[type="submit"] {
