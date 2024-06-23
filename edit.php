@@ -6,6 +6,8 @@ $db = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $db);
 $sql = 'select * from mahsolat where id=' . $_GET["id"];
 $result = mysqli_query($connect, $sql);
+$sql2 = 'select * from categories';
+$result2 = mysqli_query($connect, $sql2);
 
 ?>
 
@@ -62,20 +64,25 @@ $result = mysqli_query($connect, $sql);
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
-                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value=' . $row['name'] . ' name = "name">
-                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value=' . $row['price'] . ' name = "price">
-                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value=' . $row['off'] . ' name = "off">
-                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value=' . $row['tozih'] . ' name = "tozih">
-                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value=' . $row['pic'] . ' name = "pic">
-                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value=' . $row['category_id'] . ' name = "category_id">
+                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="' . $row['name'] . '" name="name">
+                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="' . $row['price'] . '" name="price">
+                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="' . $row['off'] . '" name="off">
+                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="' . $row['tozih'] . '" name="tozih">
+                <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="' . $row['pic'] . '" name="pic">
+                <input class="bg-dark text-center p-1 m-1 border-0 d-none" type="text" value="' . $row['id'] . '" name="id">
+                <div class="form-group container">
+                <label for="select">دسته بندی</label>
+                <select class="form-control bg-dark text-center p-1 m-1 border-0 text-light" id="select" name="category_id">
+                ';
+            }
+            while ($row2 = mysqli_fetch_assoc($result2)) {
+                echo '
+                  <option class="text-light" value="' . $row2['id'] . '">' . $row2['name'] . '</option>
                 ';
             }
             ?>
+            </select>
+            </div>
             <input type="submit" class="btn btn-light text-dark m-3" value="اعمال تغیرات">
         </form>
     </section>
-
-    <script src="main.js"></script>
-</body>
-
-</html>

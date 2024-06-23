@@ -4,9 +4,19 @@ $user = 'root';
 $pass = '';
 $db = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $db);
-$sql = 'select * from mahsolat where id =' . $_GET['id'];
+
+// Check connection
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Escape user input to prevent SQL injection
+$id = $_GET['id'];
+$sql = "SELECT m.*, c.name as category_name FROM mahsolat m JOIN categories c ON m.category_id = c.id WHERE m.id = '$id'";
 $result = mysqli_query($connect, $sql);
 
+$sql2 = "SELECT * FROM categories, mahsolat WHERE mahsolat.category_id = categories.id";
+$result2 = mysqli_query($connect, $sql2);
 ?>
 
 
@@ -21,6 +31,7 @@ $result = mysqli_query($connect, $sql);
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
 
     <title>خانه</title>
@@ -68,9 +79,9 @@ $result = mysqli_query($connect, $sql);
                         <th>' . $row['off'] . '</th>
                         <th>' . $row['tozih'] . '</th>
                         <th>' . $row['pic'] . '</th>
-                        <th>' . $row['category_id'] . '</th>
-                        <th><a class="link-light" href="edit.php?id= ' . $row['id'] . '">ویرایش</a></th>
-                        <th><a class="link-light" href="delete.php?id= ' . $row['id'] . '">حذف</a></th>
+                        <th>' . $row['category_name'] . '</th>
+                        <th><a class="link-light" href="edit.php?id=' . $row['id'] . '">ویرایش</a></th>
+                        <th><a class="link-light" href="delete.php?id=' . $row['id'] . '">حذف</a></th>
                     </tr>
                 ';
             }

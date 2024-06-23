@@ -4,21 +4,17 @@ $user = 'root';
 $pass = '';
 $db = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $db);
-$sql = 'select * from mahsolat';
+
+$sql = "select * from mahsolat ";
 $result = mysqli_query($connect, $sql);
 
+// Assuming you have a table named 'categories' with a column 'name'
+$sql2 = "select * from categories";
+$result2 = mysqli_query($connect, $sql2);
 
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$admin = 'kiako';
-$admin_pass = 'kianmaleki';
-
-if ($username === $admin && $password === $admin_pass) {
-    echo 'you are login';
-} else {
-    echo 'you are not login';
+$category_array = array();
+while ($row2 = mysqli_fetch_assoc($result2)) {
+    $category_array[$row2['id']] = $row2['name'];
 }
 ?>
 
@@ -70,29 +66,31 @@ if ($username === $admin && $password === $admin_pass) {
 
     <section class="container-xxl">
         <h2 class="m-4 text-center">محصولات</h2>
-        <table class="table  table-dark table-bordered border-light  overflow-scroll text-center ">
+        <table class="table  table-dark table-bordered border-light  overflow-scroll text-center">
+            <a class="link-light btn btn-dark  p-3 d-flex justify-content-center w-25 m-auto" href="add-admin.php">اضافه
+                کردن</a>
             <thead class=" table-active">
-                <th>نام محصولات</th>
                 <th>قیمت محصولات</th>
+                <th>نام محصولات</th>
                 <th>تخفیف محصولات</th>
                 <th>توضیح محصولات</th>
                 <th>عکس محصولات</th>
                 <th>دسته بندی محصولات</th>
-                <td>ویرایش محصولات</td>
+                <th>ویرایش محصولات</th>
             </thead>
             <tbody>
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '
-                <tr>
-                    <td>' . $row['name'] . '</td>
-                    <td>' . $row['price'] . '</td>
-                    <td>' . $row['off'] . '</td>
-                    <td>' . $row['tozih'] . '</td>
-                    <td>' . $row['pic'] . '</td>
-                    <td>' . $row['category_id'] . '</td>
-                    <td><a class="link-light" href="edit-admin.php?id= ' . $row['id'] . '">ویرایش</a></td>
-                </tr>
+                    <tr>
+                        <td>' . $row['name'] . '</td>
+                        <td>' . $row['price'] . '</td>
+                        <td>' . $row['off'] . '</td>
+                        <td>' . $row['tozih'] . '</td>
+                        <td>' . $row['pic'] . '</td>
+                        <td>' . $category_array[$row['category_id']] . '</td>
+                        <td><a class="link-light" href="edit-admin.php?id= ' . $row['id'] . '">ویرایش</a></td>
+                    </tr>
                 ';
                 }
                 ?>
