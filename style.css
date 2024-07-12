@@ -522,6 +522,24 @@
   }
 }
 
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100px; /* Adjust the width according to your need */
+  height: 40px; /* Adjust the height according to your need */
+  z-index: -1;
+}
+
+/* Style the custom file upload button */
+.custom-file-upload {
+  display: inline-block;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #343a40;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
 @media only screen and (max-width: 1200px) {
   .product-image,
   .product-info {

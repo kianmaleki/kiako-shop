@@ -12,13 +12,21 @@ if (!$connect) {
 
 // Escape user input to prevent SQL injection
 $id = $_GET['id'];
-$sql = "SELECT m.*, c.name as category_name FROM mahsolat m JOIN categories c ON m.category_id = c.id WHERE m.id = '$id'";
+
+// Fetch product details
+$sql = "SELECT * FROM mahsolat WHERE id ='$id'";
 $result = mysqli_query($connect, $sql);
 
-$sql2 = "SELECT * FROM categories, mahsolat WHERE mahsolat.category_id = categories.id";
-$result2 = mysqli_query($connect, $sql2);
-?>
+// Fetch all categories
+$sql2 = "SELECT * FROM categories";
+$categoriesResult = mysqli_query($connect, $sql2);
 
+// Create an associative array of categories with category id as key
+$categories = [];
+while ($category = mysqli_fetch_assoc($categoriesResult)) {
+    $categories[$category['id']] = $category['name'];
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="rtl">
@@ -69,17 +77,18 @@ $result2 = mysqli_query($connect, $sql2);
 
     <section class="container-xxl">
         <h2 class="m-4 text-center">محصولات</h2>
-        <table class="table  table-dark table-bordered border-light  overflow-scroll text-center ">
+        <table class="table table-dark table-bordered border-light overflow-scroll text-center">
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
+                $categoryName = isset($categories[$row['category_id']]) ? $categories[$row['category_id']] : 'Unknown';
                 echo '
                     <tr>
                         <th>' . $row['name'] . '</th>
                         <th>' . $row['price'] . '</th>
                         <th>' . $row['off'] . '</th>
                         <th>' . $row['tozih'] . '</th>
-                        <th>' . $row['pic'] . '</th>
-                        <th>' . $row['category_name'] . '</th>
+                        <th><img src="images/' . $row['pic'] . '" alt="Product Image" width="200"></th>
+                        <th>' . $categoryName . '</th>
                         <th><a class="link-light" href="edit.php?id=' . $row['id'] . '">ویرایش</a></th>
                         <th><a class="link-light" href="delete.php?id=' . $row['id'] . '">حذف</a></th>
                     </tr>

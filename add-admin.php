@@ -60,7 +60,6 @@ $result = mysqli_query($connect, $sql);
         <h2 class="m-4 text-center">محصولات</h2>
         <form action="finish-add-admin.php" method="post"
             class=" text-center d-flex justify-content-center align-items-center">
-
             <label for="name">اسم</label>
             <input class="bg-dark text-center p-1 m-1 border-0" type="text" name="name">
             <label for="name">قیمت</label>
@@ -70,7 +69,7 @@ $result = mysqli_query($connect, $sql);
             <label for="name">توضیح</label>
             <input class="bg-dark text-center p-1 m-1 border-0" type="text" name="tozih">
             <label for="name">عکس</label>
-            <input class="bg-dark text-center p-1 m-1 border-0" type="text" name="pic">
+            <input class="bg-dark text-center p-1 m-1 border-0" type="file" name="pic">
 
             <input type="submit" class="btn btn-light text-dark m-3" value="اضافه کردن">
         </form>
