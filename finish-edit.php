@@ -28,4 +28,4 @@ $sql = "UPDATE mahsolat SET name='$name', price='$price', off='$off', tozih='$to
 mysqli_query($connect, $sql);
 
 header("Location: sign-in.php");
-?>
+?>;

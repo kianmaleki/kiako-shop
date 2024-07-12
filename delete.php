@@ -8,4 +8,4 @@ $sql = 'delete from mahsolat where id=' . $_GET["id"];
 $res = mysqli_query($connect, $sql);
 header('Location:sign-in.php');
 
-?>
+?>;
