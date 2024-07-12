@@ -26,7 +26,36 @@ $result = mysqli_query($connect, $sql);
 </head>
 
 <body class="body">
-    <!--... rest of your HTML code... -->
+
+    <nav class="nav hide">
+        <div id="nav" class="nav-section hide">
+            <ul>
+                <li><a href="index.php">صفحه اصلی</a></li>
+                <li><a href="about-me.html">درباره من</a></li>
+                <li><a href="call-me.html">ارتباط با من</a></li>
+                <li><a href="mahsolates.php" class="here-page">فروشگاه</a></li>
+                <li><a href="login.html">ثبت نام</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <img src="images/png/withe.png" alt="kiako-logo" class="logo" />
+        </div>
+    </nav>
+
+    <div class="nav-section dropdown">
+        <button onclick="toggleDropdown()" class="dropbtn">&#9776;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <ul>
+                <li class="mini-menu">منو</li>
+                <li><a href="index.php">صفحه اصلی</a></li>
+                <li><a href="about-me.html">درباره من</a></li>
+                <li><a href="call-me.html">ارتباط با من</a></li>
+                <li><a href="mahsolates.php">فروشگاه</a></li>
+                <li><a href="login.html">ثبت نام</a></li>
+            </ul>
+        </div>
+    </div>
 
     <section class="container-xxl">
         <h2 class="m-4 text-center">محصولات</h2>
@@ -62,7 +91,7 @@ $result = mysqli_query($connect, $sql);
                         <td>' . $row['price'] . '</td>
                         <td>' . $row['off'] . '</td>
                         <td>' . $row['tozih'] . '</td>
-                        <td>' . $row['pic'] . '</td>
+                        <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></td>
                         <td>' . $category_name . '</td>
                         <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
                     </tr>

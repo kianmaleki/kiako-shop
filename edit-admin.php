@@ -78,6 +78,15 @@ while ($category = mysqli_fetch_assoc($categoriesResult)) {
     <section class="container-xxl">
         <h2 class="m-4 text-center">محصولات</h2>
         <table class="table table-dark table-bordered border-light overflow-scroll text-center">
+            <thead class=" table-active">
+                <th>نام محصولات</th>
+                <th>قیمت محصولات</th>
+                <th>تخفیف محصولات</th>
+                <th>توضیح محصولات</th>
+                <th>عکس محصولات</th>
+                <th>دسته بندی محصولات</th>
+                <th class="col-2">ویرایش</th>
+            </thead>
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
                 $categoryName = isset($categories[$row['category_id']]) ? $categories[$row['category_id']] : 'Unknown';
@@ -87,10 +96,10 @@ while ($category = mysqli_fetch_assoc($categoriesResult)) {
                         <th>' . $row['price'] . '</th>
                         <th>' . $row['off'] . '</th>
                         <th>' . $row['tozih'] . '</th>
-                        <th><img src="images/' . $row['pic'] . '" alt="Product Image" width="200"></th>
+                        <th><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></th>
                         <th>' . $categoryName . '</th>
-                        <th><a class="link-light" href="edit.php?id=' . $row['id'] . '">ویرایش</a></th>
-                        <th><a class="link-light" href="delete.php?id=' . $row['id'] . '">حذف</a></th>
+                        <th><a class="link-light m-2" href="edit.php?id=' . $row['id'] . '">ویرایش</a>
+                        <a class="link-light m-2" href="delete.php?id=' . $row['id'] . '">حذف</a></th>
                     </tr>
                 ';
             }
