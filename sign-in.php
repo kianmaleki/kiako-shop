@@ -5,17 +5,8 @@ $pass = '';
 $db = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $db);
 
-$sql = "select * from mahsolat ";
+$sql = "SELECT * FROM mahsolat";
 $result = mysqli_query($connect, $sql);
-
-// Assuming you have a table named 'categories' with a column 'name'
-$sql2 = "select * from categories";
-$result2 = mysqli_query($connect, $sql2);
-
-$category_array = array();
-while ($row2 = mysqli_fetch_assoc($result2)) {
-    $category_array[$row2['id']] = $row2['name'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,16 +26,18 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
 </head>
 
 <body class="body">
+
     <nav class="nav hide">
-        <div class="nav-section hide">
+        <div id="nav" class="nav-section hide">
             <ul>
-                <li><a href="index.php" class="here-page">صفحه اصلی</a></li>
+                <li><a href="index.php">صفحه اصلی</a></li>
                 <li><a href="about-me.html">درباره من</a></li>
                 <li><a href="call-me.html">ارتباط با من</a></li>
-                <li><a href="mahsolates.php">فروشگاه</a></li>
+                <li><a href="mahsolates.php" class="here-page">فروشگاه</a></li>
                 <li><a href="login.html">ثبت نام</a></li>
             </ul>
         </div>
+
         <div class="nav-section">
             <img src="images/png/withe.png" alt="kiako-logo" class="logo" />
         </div>
@@ -103,7 +96,19 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
             <tbody>
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
+                    $category_id = $row['category_id'];
+                    $category_sql = "SELECT name FROM categories WHERE id = '$category_id'";
+                    $category_result = mysqli_query($connect, $category_sql);
+
+                    if ($category_result && mysqli_num_rows($category_result) > 0) {
+                        $category_row = mysqli_fetch_assoc($category_result);
+                        $category_name = $category_row['name'];
+                    } else {
+                        $category_name = 'Category not found'; // or any other default value
+                    }
+
                     echo '
+<<<<<<< HEAD
                 <tr>
                     <td>' . $row['name'] . '</td>
                     <td>' . $row['price'] . '</td>
@@ -115,6 +120,18 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
 
                 </tr>
             ';
+=======
+                    <tr>
+                        <td>' . $row['name'] . '</td>
+                        <td>' . $row['price'] . '</td>
+                        <td>' . $row['off'] . '</td>
+                        <td>' . $row['tozih'] . '</td>
+                        <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></td>
+                        <td>' . $category_name . '</td>
+                        <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
+                    </tr>
+                ';
+>>>>>>> ab15376c9d777534cb30ed2de2c1f3dd1eb54a54
                 }
                 ?>
             </tbody>
