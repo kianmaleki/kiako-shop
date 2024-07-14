@@ -12,11 +12,12 @@ if (!$connect) {
 
 // Escape user input to prevent SQL injection
 $id = $_GET['id'];
-$sql = "SELECT m.*, c.name as category_name FROM mahsolat m JOIN categories c ON m.category_id = c.id WHERE m.id = '$id'";
+$sql = "SELECT * FROM mahsolat  WHERE id ='$id'";
 $result = mysqli_query($connect, $sql);
 
-$sql2 = "SELECT * FROM categories, mahsolat WHERE mahsolat.category_id = categories.id";
+$sql2 = "SELECT * FROM categories ";
 $result2 = mysqli_query($connect, $sql2);
+
 ?>
 
 
@@ -72,6 +73,10 @@ $result2 = mysqli_query($connect, $sql2);
         <table class="table  table-dark table-bordered border-light  overflow-scroll text-center ">
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
+                while ($row2 = mysqli_fetch_assoc($result2)) {
+                    if ($row["category_id"] = $row2['id'])
+                        $categories_name = $row2["name"];
+                }
                 echo '
                     <tr>
                         <th>' . $row['name'] . '</th>
