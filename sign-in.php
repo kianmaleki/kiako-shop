@@ -126,8 +126,13 @@ $result = mysqli_query($connect, $sql);
                         <td>' . $row['price'] . '</td>
                         <td>' . $row['off'] . '</td>
                         <td>' . $row['tozih'] . '</td>
+<<<<<<< Updated upstream
                         <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></td>
                         <td>' . $category_name . '</td>
+=======
+                        <td>' . $row['pic'] . '</td>
+                        <td>' . $category_array[$row['category_id']] . '</td>
+>>>>>>> Stashed changes
                         <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
                     </tr>
                 ';
