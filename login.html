@@ -2,59 +2,60 @@
 <html lang="fr" dir="rtl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Latest compiled and minified CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
-  <title>ثبت نام</title>
+    <title>ثبت نام</title>
 </head>
 
 <body class="body">
-  <nav class="nav hide">
-    <div class="nav-section hide">
-      <ul>
-        <li><a href="index.php">صفحه اصلی</a></li>
-        <li><a href="about-me.html">درباره من</a></li>
-        <li><a href="call-me.html">ارتباط با من</a></li>
-        <li><a href="mahsolates.php">فروشگاه</a></li>
-        <li><a href="login.html" class="here-page">ثبت نام</a></li>
-      </ul>
-    </div>
-    <div class="nav-section">
-      <img src="images/png/withe.png" alt="kiako-logo" class="logo" />
-    </div>
-  </nav>
+    <nav class="nav hide">
+        <div class="nav-section hide">
+            <ul>
+                <li><a href="index.php">صفحه اصلی</a></li>
+                <li><a href="about-me.html">درباره من</a></li>
+                <li><a href="call-me.html">ارتباط با من</a></li>
+                <li><a href="mahsolates.php">فروشگاه</a></li>
+                <li><a href="sing-in.html" class="here-page">ورود</a></li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <img src="images/png/withe.png" alt="kiako-logo" class="logo" />
+        </div>
+    </nav>
 
-  <div class="nav-section dropdown">
-    <button onclick="toggleDropdown()" class="dropbtn">&#9776;</button>
-    <div id="myDropdown" class="dropdown-content">
-      <ul>
-        <li class="mini-menu">منو</li>
-        <li><a href="index.php">صفحه اصلی</a></li>
-        <li><a href="about-me.html">درباره من</a></li>
-        <li><a href="call-me.html">ارتباط با من</a></li>
-        <li><a href="mahsolates.php">فروشگاه</a></li>
-        <li><a href="login.html">ثبت نام</a></li>
-      </ul>
+    <div class="nav-section dropdown">
+        <button onclick="toggleDropdown()" class="dropbtn">&#9776;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <ul>
+                <li class="mini-menu">منو</li>
+                <li><a href="index.php">صفحه اصلی</a></li>
+                <li><a href="about-me.html">درباره من</a></li>
+                <li><a href="call-me.html">ارتباط با من</a></li>
+                <li><a href="mahsolates.php">فروشگاه</a></li>
+                <li><a href="sing-in.html">ورود</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <section class="form">
-    <div class="section-form">
-      <form action="form.php" method="post">
-        <input type="text" name="username" id="username" placeholder="نام کاربری" autocomplete="off" />
-        <input type="password" name="password" id="password" placeholder="رمز عبور" autocomplete="off" maxlength="30" />
-        <input type="submit" value="ثبت نام" />
-      </form>
-    </div>
-  </section>
+    <section class="form">
+        <div class="section-form">
+            <form action="finish-login.php" method="post">
+                <input type="text" name="username" id="username" placeholder="نام کاربری" autocomplete="off" />
+                <input type="password" name="password" id="password" placeholder="رمز عبور" autocomplete="off"
+                    maxlength="30" />
+                <input type="submit" value="ورود" />
+            </form>
+        </div>
+    </section>
 
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

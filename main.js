@@ -16,6 +16,6 @@ window.onclick = function (event) {
   }
 };
 
-document.querySelector(".buy-button").addEventListener("click", function () {
+document.querySelector(".buy-button").addEventListener("click", () => {
   alert("محصول به سبد خرید اضافه شد !");
 });

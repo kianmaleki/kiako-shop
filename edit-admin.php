@@ -4,6 +4,8 @@ $user = 'root';
 $pass = '';
 $db = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $db);
+include "./check-login.php";
+
 
 // Check connection
 if (!$connect) {

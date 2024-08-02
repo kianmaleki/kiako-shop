@@ -4,7 +4,7 @@ $user = 'root';
 $pass = '';
 $db = 'kiako';
 $connect = mysqli_connect($server, $user, $pass, $db);
-
+include "./check-login.php";
 $sql = "SELECT * FROM mahsolat";
 $result = mysqli_query($connect, $sql);
 ?>
@@ -58,10 +58,16 @@ $result = mysqli_query($connect, $sql);
     </div>
 
     <section class="container-xxl">
+
         <h2 class="m-4 text-center">محصولات</h2>
-        <table class="table  table-dark table-bordered border-light  overflow-scroll text-center">
+
+        <table class="table table-dark table-bordered border-light  overflow-scroll text-center">
             <a class="link-light btn btn-dark  p-3 d-flex justify-content-center w-25 m-auto" href="add-admin.php">اضافه
                 کردن</a>
+            <a class="link-light btn border-3 border-danger p-3 d-flex justify-content-center w-25 m-auto"
+                href="logout.php">
+                خاج شدن
+            </a>
             <thead class=" table-active">
                 <th>قیمت محصولات</th>
                 <th>نام محصولات</th>

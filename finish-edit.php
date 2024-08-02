@@ -27,5 +27,5 @@ if (isset($_FILES['pic']) && $_FILES['pic']['error'] == UPLOAD_ERR_OK) {
 $sql = "UPDATE mahsolat SET name='$name', price='$price', off='$off', tozih='$tozih', pic='$pic', category_id='$category_id' WHERE id='$id'";
 mysqli_query($connect, $sql);
 
-header("Location: sign-in.php");
+header("Location: admin-home.php");
 ?>;

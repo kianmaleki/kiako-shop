@@ -47,6 +47,7 @@
     <section class="container-xxl">
         <h2 class="m-4 text-center">محصولات</h2>
         <?php
+        include "./check-login.php";
         $server = 'localhost';
         $user = 'root';
         $pass = '';
@@ -75,7 +76,7 @@
                 name="tozih">
             <div class="form-group container">
                 <label for="pic">عکس فعلی:</label>
-                <img src="images/<?php echo $existing_image; ?>" alt="existing image" width="100" height="100">
+                <img src="images/<?php echo $existing_image; ?>" alt="existing image" width="200" height="200">
                 <br>
                 <input class="bg-dark text-center p-1 m-1 border-0" type="file" name="pic">
                 <input type="hidden" name="existing_pic" value="<?php echo $existing_image; ?>">
