@@ -57,6 +57,28 @@ $result = mysqli_query($connect, $sql);
         </div>
     </div>
 
+    <?php
+    $server = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $db = 'kiako';
+    $connect = mysqli_connect($server, $user, $pass, $db);
+
+    $sql = "select * from mahsolat ";
+    $result = mysqli_query($connect, $sql);
+
+    // Assuming you have a table named 'categories' with a column 'name'
+    $sql2 = "select * from categories";
+    $result2 = mysqli_query($connect, $sql2);
+
+    $category_array = array();
+    while ($row2 = mysqli_fetch_assoc($result2)) {
+        $category_array[$row2['id']] = $row2['name'];
+    }
+    ?>
+
+    <!-- Your HTML code here -->
+
     <section class="container-xxl">
 
         <h2 class="m-4 text-center">محصولات</h2>
@@ -92,21 +114,42 @@ $result = mysqli_query($connect, $sql);
                     }
 
                     echo '
+<<<<<<< HEAD
+                <tr>
+                    <td>' . $row['name'] . '</td>
+                    <td>' . $row['price'] . '</td>
+                    <td>' . $row['off'] . '</td>
+                    <td>' . $row['tozih'] . '</td>
+                    <td>' . $row['pic'] . '</td>
+                    <td>' . (isset($category_array[$row["category_id"]]) ? $category_array[$row["category_id"]] : 'Unknown Category') . '</td>
+                    <td><a class="link-light" href="edit-admin.php?id='. $row['id'] . '">ویرایش</a></td>
+
+                </tr>
+            ';
+=======
                     <tr>
                         <td>' . $row['name'] . '</td>
                         <td>' . $row['price'] . '</td>
                         <td>' . $row['off'] . '</td>
                         <td>' . $row['tozih'] . '</td>
+<<<<<<< Updated upstream
                         <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></td>
                         <td>' . $category_name . '</td>
+=======
+                        <td>' . $row['pic'] . '</td>
+                        <td>' . $category_array[$row['category_id']] . '</td>
+>>>>>>> Stashed changes
                         <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
                     </tr>
                 ';
+>>>>>>> ab15376c9d777534cb30ed2de2c1f3dd1eb54a54
                 }
                 ?>
             </tbody>
         </table>
     </section>
+
+    <script src="main.js"></script>
 
     <script src="main.js"></script>
 </body>

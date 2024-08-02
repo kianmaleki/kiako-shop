@@ -14,6 +14,15 @@ if (!$connect) {
 
 // Escape user input to prevent SQL injection
 $id = $_GET['id'];
+<<<<<<< HEAD
+$sql = "SELECT * FROM mahsolat  WHERE id ='$id'";
+$result = mysqli_query($connect, $sql);
+
+$sql2 = "SELECT * FROM categories ";
+$result2 = mysqli_query($connect, $sql2);
+
+?>
+=======
 
 // Fetch product details
 $sql = "SELECT * FROM mahsolat WHERE id ='$id'";
@@ -22,6 +31,7 @@ $result = mysqli_query($connect, $sql);
 // Fetch all categories
 $sql2 = "SELECT * FROM categories";
 $categoriesResult = mysqli_query($connect, $sql2);
+>>>>>>> ab15376c9d777534cb30ed2de2c1f3dd1eb54a54
 
 // Create an associative array of categories with category id as key
 $categories = [];
@@ -91,7 +101,14 @@ while ($category = mysqli_fetch_assoc($categoriesResult)) {
             </thead>
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
+<<<<<<< HEAD
+                while ($row2 = mysqli_fetch_assoc($result2)) {
+                    if ($row["category_id"] = $row2['id'])
+                        $categories_name = $row2["name"];
+                }
+=======
                 $categoryName = isset($categories[$row['category_id']]) ? $categories[$row['category_id']] : 'Unknown';
+>>>>>>> ab15376c9d777534cb30ed2de2c1f3dd1eb54a54
                 echo '
                     <tr>
                         <th>' . $row['name'] . '</th>
