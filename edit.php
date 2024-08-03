@@ -66,23 +66,25 @@
         ?>
 
         <form action="finish-edit.php" method="post" enctype="multipart/form-data" class="text-center">
-            <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="<?php echo $row['name']; ?>"
-                name="name">
-            <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="<?php echo $row['price']; ?>"
-                name="price">
-            <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="<?php echo $row['off']; ?>"
-                name="off">
-            <input class="bg-dark text-center p-1 m-1 border-0" type="text" value="<?php echo $row['tozih']; ?>"
-                name="tozih">
-            <div class="form-group container">
-                <label for="pic">عکس فعلی:</label>
+            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo $row['name']; ?>" name="name">
+            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo $row['price']; ?>" name="price">
+            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo $row['off']; ?>" name="off">
+            <textarea class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo $row['tozih']; ?>" name="tozih"
+                style="height: 20vh;"><?php echo $row['tozih']; ?></textarea>
+            <div class="form-group container flex flex-column">
+                <label>عکس فعلی:</label>
                 <img src="images/<?php echo $existing_image; ?>" alt="existing image" width="200" height="200">
                 <br>
-                <input class="bg-dark text-center p-1 m-1 border-0" type="file" name="pic">
+                <label for="pic" id="pic_lable" class="custom-file-upload w-25 text-center m-2 ">عکس جدید</label>
+                <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="file" id="pic" name="pic">
                 <input type="hidden" name="existing_pic" value="<?php echo $existing_image; ?>">
             </div>
-            <input class="bg-dark text-center p-1 m-1 border-0 d-none" type="text" value="<?php echo $row['id']; ?>"
-                name="id">
+            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0 d-none" type="text"
+                value="<?php echo $row['id']; ?>" name="id">
             <div class="form-group container">
                 <label for="select">دسته بندی</label>
                 <select class="form-control bg-dark text-center p-1 m-1 border-0 text-light" id="select"

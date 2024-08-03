@@ -84,12 +84,15 @@ $result = mysqli_query($connect, $sql);
         <h2 class="m-4 text-center">محصولات</h2>
 
         <table class="table table-dark table-bordered border-light  overflow-scroll text-center">
-            <a class="link-light btn btn-dark  p-3 d-flex justify-content-center w-25 m-auto" href="add-admin.php">اضافه
-                کردن</a>
-            <a class="link-light btn border-3 border-danger p-3 d-flex justify-content-center w-25 m-auto"
-                href="logout.php">
-                خاج شدن
-            </a>
+            <div class="d-flex w-100 m-auto justify-content-center align-items-center mb-5">
+                <a class="link-light btn mx-1 border-3 border-success p-3 d-flex justify-content-center w-50 m-auto"
+                    href="add-admin.php">اضافه
+                    کردن محصول</a>
+                <a class="link-light btn mx-1 border-3 border-danger p-3 d-flex justify-content-center w-50 m-auto"
+                    href="logout.php">
+                    خاج شدن از پنل
+                </a>
+            </div>
             <thead class=" table-active">
                 <th>قیمت محصولات</th>
                 <th>نام محصولات</th>
@@ -114,35 +117,16 @@ $result = mysqli_query($connect, $sql);
                     }
 
                     echo '
-<<<<<<< HEAD
-                <tr>
-                    <td>' . $row['name'] . '</td>
-                    <td>' . $row['price'] . '</td>
-                    <td>' . $row['off'] . '</td>
-                    <td>' . $row['tozih'] . '</td>
-                    <td>' . $row['pic'] . '</td>
-                    <td>' . (isset($category_array[$row["category_id"]]) ? $category_array[$row["category_id"]] : 'Unknown Category') . '</td>
-                    <td><a class="link-light" href="edit-admin.php?id='. $row['id'] . '">ویرایش</a></td>
-
-                </tr>
-            ';
-=======
                     <tr>
                         <td>' . $row['name'] . '</td>
                         <td>' . $row['price'] . '</td>
                         <td>' . $row['off'] . '</td>
                         <td>' . $row['tozih'] . '</td>
-<<<<<<< Updated upstream
-                        <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></td>
+                        <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img class="rounded-3 w-100 h-auto " src="images/' . $row['pic'] . '"  /></a></td>
                         <td>' . $category_name . '</td>
-=======
-                        <td>' . $row['pic'] . '</td>
-                        <td>' . $category_array[$row['category_id']] . '</td>
->>>>>>> Stashed changes
                         <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
                     </tr>
                 ';
->>>>>>> ab15376c9d777534cb30ed2de2c1f3dd1eb54a54
                 }
                 ?>
             </tbody>
