@@ -114,35 +114,16 @@ $result = mysqli_query($connect, $sql);
                     }
 
                     echo '
-<<<<<<< HEAD
-                <tr>
-                    <td>' . $row['name'] . '</td>
-                    <td>' . $row['price'] . '</td>
-                    <td>' . $row['off'] . '</td>
-                    <td>' . $row['tozih'] . '</td>
-                    <td>' . $row['pic'] . '</td>
-                    <td>' . (isset($category_array[$row["category_id"]]) ? $category_array[$row["category_id"]] : 'Unknown Category') . '</td>
-                    <td><a class="link-light" href="edit-admin.php?id='. $row['id'] . '">ویرایش</a></td>
-
-                </tr>
-            ';
-=======
                     <tr>
                         <td>' . $row['name'] . '</td>
                         <td>' . $row['price'] . '</td>
                         <td>' . $row['off'] . '</td>
                         <td>' . $row['tozih'] . '</td>
-<<<<<<< Updated upstream
-                        <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></td>
+                        <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" class="rounded-3 object-fit-cover" width="300" height="300" /></a></td>
                         <td>' . $category_name . '</td>
-=======
-                        <td>' . $row['pic'] . '</td>
-                        <td>' . $category_array[$row['category_id']] . '</td>
->>>>>>> Stashed changes
                         <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
                     </tr>
                 ';
->>>>>>> ab15376c9d777534cb30ed2de2c1f3dd1eb54a54
                 }
                 ?>
             </tbody>
