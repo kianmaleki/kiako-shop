@@ -72,7 +72,7 @@ $result2 = mysqli_query($connect, $sql2);
                 <label for="select">دسته بندی</label>
                 <select class="form-control bg-dark text-center p-1 m-1 border-0 text-light" id="select"
                     name="category_id">
-                    <option value="dont have category">بدون دسته بندی</option>
+                    <option value="">بدون دسته بندی</option>
                     <?php while ($row2 = mysqli_fetch_assoc($result2)) { ?>
                         <option class="text-light" value="<?php echo $row2['id']; ?>"><?php echo $row2['name']; ?></option>
                     <?php } ?>

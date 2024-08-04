@@ -1,14 +1,23 @@
 <?php
+
 // دریافت اطلاعات فرم
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 // اتصال به دیتابیس
-$db = new PDO('mysql:host=localhost;dbname=kiako', 'root', '');
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'kiako';
+$connect = mysqli_connect($server, $user, $pass, $db);
 
 // ایجاد query برای INSERT
-$query = "INSERT INTO users ( username , password) VALUES ('$username' , '$password')";
+$sql = 'INSERT INTO users (username , password) VALUES ("' . $username . '" , "' . $password . '")';
 
+mysqli_query($connect, $sql);
 
-header("Location:login.html")
-    ?>;
+session_start();
+session_unset();
+
+header("Location:login.html");
+?>;

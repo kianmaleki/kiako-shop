@@ -84,12 +84,15 @@ $result = mysqli_query($connect, $sql);
         <h2 class="m-4 text-center">محصولات</h2>
 
         <table class="table table-dark table-bordered border-light  overflow-scroll text-center">
-            <a class="link-light btn btn-dark  p-3 d-flex justify-content-center w-25 m-auto" href="add-admin.php">اضافه
-                کردن</a>
-            <a class="link-light btn border-3 border-danger p-3 d-flex justify-content-center w-25 m-auto"
-                href="logout.php">
-                خاج شدن
-            </a>
+            <div class="d-flex w-100 m-auto justify-content-center align-items-center mb-5">
+                <a class="link-light btn mx-1 border-3 border-success p-3 d-flex justify-content-center w-50 m-auto"
+                    href="add-admin.php">اضافه
+                    کردن محصول</a>
+                <a class="link-light btn mx-1 border-3 border-danger p-3 d-flex justify-content-center w-50 m-auto"
+                    href="logout.php">
+                    خاج شدن از پنل
+                </a>
+            </div>
             <thead class=" table-active">
                 <th>قیمت محصولات</th>
                 <th>نام محصولات</th>
