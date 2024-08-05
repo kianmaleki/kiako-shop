@@ -76,8 +76,8 @@
             <table class="table table-dark table-bordered border-light text-center">
                 <thead class="table-active">
                     <tr>
-                        <th>قیمت</th>
                         <th>نام</th>
+                        <th>قیمت</th>
                         <th>تخفیف</th>
                         <th>توضیحات</th>
                         <th>عکس</th>
@@ -101,8 +101,8 @@
 
                         echo '
                         <tr>
-                            <td>' . $row['price'] . '</td>
                             <td>' . $row['name'] . '</td>
+                            <td>' . $row['price'] . '</td>
                             <td>' . $row['off'] . '</td>
                             <td>' . $row['tozih'] . '</td>
                             <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img class="rounded-3 w-100 h-auto" src="images/' . $row['pic'] . '" /></a></td>
