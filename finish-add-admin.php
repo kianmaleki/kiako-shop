@@ -13,6 +13,11 @@ if (!$connect) {
 }
 
 
+$upload_dir = './images/';
+$uploaded_file = $upload_dir . basename($_FILES['pic']['name']);
+if (move_uploaded_file($_FILES['pic']['tmp_name'], $uploaded_file)) {
+    $pic = basename($_FILES['pic']['name']);
+}
 
 
 // Insert data into database

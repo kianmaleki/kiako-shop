@@ -58,7 +58,8 @@ $result2 = mysqli_query($connect, $sql2);
     <section class="container flex-column">
         <h2 class="m-4 text-center">محصولات</h2>
         <form action="finish-add-admin.php" method="post"
-            class=" text-end d-flex justify-content-center m-auto align-items-center flex-column w-50 ">
+            class=" text-end d-flex justify-content-center m-auto align-items-center flex-column w-50 "
+            enctype="multipart/form-data">
             <label class="w-100 m-3 mb-1" for="name">اسم</label>
             <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text" name="name" id="name">
             <label class="w-100 m-3 mb-1" for="price">قیمت</label>

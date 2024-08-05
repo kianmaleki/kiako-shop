@@ -22,12 +22,6 @@ $result2 = mysqli_query($connect, $sql2);
 
 ?>
 
-// Create an associative array of categories with category id as key
-$categories = [];
-while ($category = mysqli_fetch_assoc($categoriesResult)) {
-$categories[$category['id']] = $category['name'];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="rtl">
@@ -100,7 +94,7 @@ $categories[$category['id']] = $category['name'];
                         <th>' . $row['price'] . '</th>
                         <th>' . $row['off'] . '</th>
                         <th>' . $row['tozih'] . '</th>
-                        <th><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" /></a></th>
+                        <th><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img src="images/' . $row['pic'] . '" width="300" height="300" class="rounded-3 object-fit-cover" /></a></th>
                         <th>' . $categories_name . '</th>
                         <th><a class="link-light m-2" href="edit.php?id=' . $row['id'] . '">ویرایش</a>
                         <a class="link-light m-2" href="delete.php?id=' . $row['id'] . '">حذف</a></th>

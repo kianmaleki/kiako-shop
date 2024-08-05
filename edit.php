@@ -53,7 +53,7 @@
         $pass = '';
         $db = 'kiako';
         $connect = mysqli_connect($server, $user, $pass, $db);
-        $sql = 'SELECT * FROM mahsolat WHERE id=' . $_GET["id"];
+        $sql = 'SELECT * FROM mahsolat WHERE id=' . intval($_GET["id"]);
         $result = mysqli_query($connect, $sql);
         $row = mysqli_fetch_assoc($result);
 
@@ -61,37 +61,47 @@
         $result2 = mysqli_query($connect, $sql2);
 
         // Store existing image and category ID
-        $existing_image = $row['pic'];
-        $existing_category_id = $row['category_id'];
+        $existing_image = htmlspecialchars($row['pic']);
+        $existing_category_id = intval($row['category_id']);
         ?>
 
-        <form action="finish-edit.php" method="post" enctype="multipart/form-data" class="text-center">
-            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
-                value="<?php echo $row['name']; ?>" name="name">
-            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
-                value="<?php echo $row['price']; ?>" name="price">
-            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
-                value="<?php echo $row['off']; ?>" name="off">
-            <textarea class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
-                value="<?php echo $row['tozih']; ?>" name="tozih"
-                style="height: 20vh;"><?php echo $row['tozih']; ?></textarea>
+        <form action="finish-edit.php" method="post" enctype="multipart/form-data" class="text-center w-50 m-auto">
+            <label class="w-100 m-3 mb-1 text-end" for="name">نام :</label>
+            <input id="name" class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo htmlspecialchars($row['name']); ?>" name="name">
+
+            <label class="w-100 m-3 mb-1 text-end" for="price">قیمت :</label>
+            <input id="price" class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo htmlspecialchars($row['price']); ?>" name="price">
+
+            <label class="w-100 m-3 mb-1 text-end" for="off">تخفیف :</label>
+            <input id="off" class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo htmlspecialchars($row['off']); ?>" name="off">
+
+            <label class="w-100 m-3 mb-1 text-end" for="tozih">توضیح :</label>
+            <input id="tozih" class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="text"
+                value="<?php echo htmlspecialchars($row['tozih']); ?>" name="tozih">
+
             <div class="form-group container flex flex-column">
-                <label>عکس فعلی:</label>
-                <img src="images/<?php echo $existing_image; ?>" alt="existing image" width="200" height="200">
+                <label for="pic">عکس فعلی:</label>
+                <img src="images/<?php echo htmlspecialchars($existing_image); ?>" alt="existing image"
+                    class="rounded-3 object-fit-cover" width="300" height="300">
                 <br>
-                <label for="pic" id="pic_lable" class="custom-file-upload w-25 text-center m-2 ">عکس جدید</label>
-                <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0" type="file" id="pic" name="pic">
-                <input type="hidden" name="existing_pic" value="<?php echo $existing_image; ?>">
+                <label for="pic" class="custom-file-upload">انتخاب عکس جدید</label>
+                <input id="pic" class="bg-dark text-center p-1 m-1 border-0 d-none" type="file" name="pic">
+                <input type="hidden" name="existing_pic" value="<?php echo htmlspecialchars($existing_image); ?>">
             </div>
-            <input class="text-end bg-dark w-100 p-2 px-4 rounded-2 m-1 border-0 d-none" type="text"
-                value="<?php echo $row['id']; ?>" name="id">
-            <div class="form-group container">
+            <input type="hidden" name="id" value="<?php echo intval($row['id']); ?>">
+
+            <div class="form-group container w-25">
                 <label for="select">دسته بندی</label>
                 <select class="form-control bg-dark text-center p-1 m-1 border-0 text-light" id="select"
                     name="category_id">
                     <?php while ($row2 = mysqli_fetch_assoc($result2)) { ?>
-                        <option class="text-light" value="<?php echo $row2['id']; ?>" <?php if ($row2['id'] == $existing_category_id)
-                               echo 'selected'; ?>><?php echo $row2['name']; ?></option>
+                        <option class="text-light" value="<?php echo intval($row2['id']); ?>" <?php if ($row2['id'] == $existing_category_id)
+                               echo 'selected'; ?>>
+                            <?php echo htmlspecialchars($row2['name']); ?>
+                        </option>
                     <?php } ?>
                 </select>
             </div>
