@@ -78,7 +78,7 @@ $result2 = mysqli_query($connect, $sql2);
                 </select>
             </div>
             <label for="pic" id="pic_lable" class="custom-file-upload w-50 text-center m-2 ">عکس</label>
-            <input type="file" name="pic" id="pic" style="display: none;">
+            <input type="file" name="pic" id="pic" class="d-none">
             <input type="submit" class="btn btn-light text-dark m-3" value="اضافه کردن">
         </form>
     </section>

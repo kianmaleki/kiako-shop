@@ -42,6 +42,10 @@
   color: #fff;
 }
 
+.bg-black {
+  background-color: var(--background-dark);
+}
+
 .body {
   font-family: "danstevis";
   background-color: var(--background-dark);
@@ -506,6 +510,7 @@
   .form .section-form input[type="submit"] {
     width: 60%;
   }
+
   .head-continer p {
     max-width: 100%;
     width: 90%;
@@ -533,6 +538,7 @@
 }
 
 @media only screen and (max-width: 1200px) {
+
   .product-image,
   .product-info {
     width: 100%;
