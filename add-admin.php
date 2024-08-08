@@ -1,4 +1,6 @@
 <?php
+include "./check-login.php";
+
 $server = 'localhost';
 $user = 'root';
 $pass = '';
