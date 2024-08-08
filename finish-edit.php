@@ -17,7 +17,7 @@ $pic = $existing_pic; // Default to existing image
 
 // Check if a new file has been uploaded
 if (isset($_FILES['pic']) && $_FILES['pic']['error'] == UPLOAD_ERR_OK) {
-    $upload_dir = 'images/';
+    $upload_dir = './images/';
     $uploaded_file = $upload_dir . basename($_FILES['pic']['name']);
     if (move_uploaded_file($_FILES['pic']['tmp_name'], $uploaded_file)) {
         $pic = basename($_FILES['pic']['name']); // Use the new image

@@ -104,7 +104,7 @@
                             <td>' . $row['name'] . '</td>
                             <td>' . $row['price'] . '</td>
                             <td>' . $row['off'] . '</td>
-                            <td>' . $row['tozih'] . '</td>
+                            <td class="text-end" >' . $row['tozih'] . '</td>
                             <td><a href="/class-shop/mahsol.php?id=' . $row['id'] . '"><img class="rounded-3 w-100 h-auto" src="images/' . $row['pic'] . '" /></a></td>
                             <td>' . $category_name . '</td>
                             <td><a class="link-light" href="edit-admin.php?id=' . $row['id'] . '">ویرایش</a></td>
